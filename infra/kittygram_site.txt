@@ -1,0 +1,5 @@
+IP: 158.160.7.157;
+name_taski: https://premiumsite.ddns.net/;
+name_kittygram: https://gramkitty.ddns.net/;
+login: yc-user;
+password: yc-user123;
