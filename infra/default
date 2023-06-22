@@ -1,9 +1,8 @@
 server {
-    server_name 158.160.7.157 premiumsite.ddns.net;
+    server_name premiumsite.ddns.net;
 
 
     location /api/ {
-        # Эта команда определяет, куда нужно перенаправить запрос.
         proxy_pass http://127.0.0.1:8000;
     }
 
@@ -44,7 +43,6 @@ server {
 
 
     location /api/ {
-        # Эта команда определяет, куда нужно перенаправить запрос.
         proxy_pass http://127.0.0.1:8080;
     }
 

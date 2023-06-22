@@ -1,16 +1,22 @@
 import os
-from dotenv import load_dotenv, find_dotenv
+from distutils.util import strtobool
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(find_dotenv())
+load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = False
+if os.getenv('DEBUG'):
+    DEBUG = bool(strtobool(os.getenv('DEBUG')))
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = ['158.160.7.157', '127.0.0.1', 'localhost', 'gramkitty.ddns.net']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ALLOWED_HOSTS.split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
