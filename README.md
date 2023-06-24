@@ -19,6 +19,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 cd infra_sprint1/backend
 python manage.py migrate
+python manage.py createsuperuser
 
 # Заполнить переменные окружения по аналогии с файлом .env_example, переименовать файл
 vi infra_sprint1/backend/kittygram_backend/.env_exmaple
